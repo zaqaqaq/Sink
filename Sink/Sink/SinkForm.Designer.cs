@@ -30,7 +30,7 @@ namespace Sink
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.button1 = new System.Windows.Forms.Button();
+            this.BuildingButton = new System.Windows.Forms.Button();
             this.RadTapSink = new System.Windows.Forms.TextBox();
             this.RadSink = new System.Windows.Forms.TextBox();
             this.HeightSink = new System.Windows.Forms.TextBox();
@@ -55,7 +55,7 @@ namespace Sink
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.button1);
+            this.splitContainer1.Panel1.Controls.Add(this.BuildingButton);
             this.splitContainer1.Panel1.Controls.Add(this.RadTapSink);
             this.splitContainer1.Panel1.Controls.Add(this.RadSink);
             this.splitContainer1.Panel1.Controls.Add(this.HeightSink);
@@ -76,14 +76,15 @@ namespace Sink
             this.splitContainer1.SplitterDistance = 396;
             this.splitContainer1.TabIndex = 0;
             // 
-            // button1
+            // BuildingButton
             // 
-            this.button1.Location = new System.Drawing.Point(148, 348);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(114, 52);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Построить";
-            this.button1.UseVisualStyleBackColor = true;
+            this.BuildingButton.Location = new System.Drawing.Point(148, 348);
+            this.BuildingButton.Name = "BuildingButton";
+            this.BuildingButton.Size = new System.Drawing.Size(114, 52);
+            this.BuildingButton.TabIndex = 12;
+            this.BuildingButton.Text = "Построить";
+            this.BuildingButton.UseVisualStyleBackColor = true;
+            this.BuildingButton.Click += new System.EventHandler(this.BuildingButton_Click);
             // 
             // RadTapSink
             // 
@@ -123,6 +124,7 @@ namespace Sink
             this.WidthSink.Name = "WidthSink";
             this.WidthSink.Size = new System.Drawing.Size(100, 20);
             this.WidthSink.TabIndex = 7;
+            this.WidthSink.TextChanged += new System.EventHandler(this.WidthSink_TextChanged);
             this.WidthSink.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.WidthSink_KeyPress);
             // 
             // label6
@@ -198,7 +200,7 @@ namespace Sink
         #endregion
 
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BuildingButton;
         private System.Windows.Forms.TextBox RadTapSink;
         private System.Windows.Forms.TextBox RadSink;
         private System.Windows.Forms.TextBox HeightSink;

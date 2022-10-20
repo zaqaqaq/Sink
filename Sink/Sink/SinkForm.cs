@@ -11,10 +11,10 @@ namespace Sink
 {
     public partial class SinkForm : Form
     {
+
         public SinkForm()
         {
             InitializeComponent();
-            
         }
 
         private void WidthSink_KeyPress(object sender, KeyPressEventArgs e)
@@ -56,6 +56,17 @@ namespace Sink
             e.Handled = true;
             
         }
+
+        private void WidthSink_TextChanged(object sender, EventArgs e)
+        {
+         
+        }
+
+        private void BuildingButton_Click(object sender, EventArgs e)
+        {
+          
+        }
+    }
     }
     
 }
