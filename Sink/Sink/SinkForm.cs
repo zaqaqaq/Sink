@@ -22,7 +22,7 @@ namespace Sink
             if (Char.IsDigit(e.KeyChar) == true) return;
             if (e.KeyChar == Convert.ToChar(Keys.Back)) return;
             e.Handled = true;
-            WidthSink.Clear();
+            
         }
 
         private void LengthSink_KeyPress(object sender, KeyPressEventArgs e)
@@ -30,7 +30,7 @@ namespace Sink
             if (Char.IsDigit(e.KeyChar) == true) return;
             if (e.KeyChar == Convert.ToChar(Keys.Back)) return;
             e.Handled = true;
-            WidthSink.Clear();
+            
         }
 
         private void HeightSink_KeyPress(object sender, KeyPressEventArgs e)
@@ -38,7 +38,7 @@ namespace Sink
             if (Char.IsDigit(e.KeyChar) == true) return;
             if (e.KeyChar == Convert.ToChar(Keys.Back)) return;
             e.Handled = true;
-            WidthSink.Clear();
+            
         }
 
         private void RadSink_KeyPress(object sender, KeyPressEventArgs e)
@@ -46,7 +46,7 @@ namespace Sink
             if (Char.IsDigit(e.KeyChar) == true) return;
             if (e.KeyChar == Convert.ToChar(Keys.Back)) return;
             e.Handled = true;
-            WidthSink.Clear();
+            
         }
 
         private void RadTapSink_KeyPress(object sender, KeyPressEventArgs e)
@@ -54,7 +54,7 @@ namespace Sink
             if (Char.IsDigit(e.KeyChar) == true) return;
             if (e.KeyChar == Convert.ToChar(Keys.Back)) return;
             e.Handled = true;
-            WidthSink.Clear();
+            
         }
     }
     
