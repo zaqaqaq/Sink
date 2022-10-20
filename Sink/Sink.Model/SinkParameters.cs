@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sink.Model
 {
-    class SinkParameters
+    public class SinkParameters
     {
         private Dictionary<SinkParametersType, SinkParameter> _parameters;
 

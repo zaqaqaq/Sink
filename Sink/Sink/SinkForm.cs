@@ -23,6 +23,7 @@ namespace Sink
         public SinkForm()
         {
             InitializeComponent();
+            Parameters = new Model.SinkParameters();
         }
 
 

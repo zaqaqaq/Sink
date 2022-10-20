@@ -86,5 +86,11 @@
   <ItemGroup>
     <None Include="Resources\2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sink.Model\Sink.Model.csproj">
+      <Project>{794e35fc-1a4d-4dfb-9c98-b085474890bd}</Project>
+      <Name>Sink.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
