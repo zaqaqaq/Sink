@@ -7,15 +7,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Sink.Model;
+
 namespace Sink
 {
     public partial class SinkForm : Form
     {
 
+        private SinkParameters Parameters;
+
+        private Dictionary<TextBox, SinkParametersType> TextBoxToParameter;
+
+
+
         public SinkForm()
         {
             InitializeComponent();
         }
+
+
+
+
 
         private void WidthSink_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -65,6 +77,11 @@ namespace Sink
         private void BuildingButton_Click(object sender, EventArgs e)
         {
           
+        }
+
+        private void SinkForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
     }
