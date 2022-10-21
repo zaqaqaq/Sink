@@ -10,6 +10,8 @@ namespace Sink.Model
     {
         private Dictionary<SinkParametersType, SinkParameter> _parameters;
 
+        private double _widthSink;
+
         public SinkParameters()
         {
             _parameters = new Dictionary<SinkParametersType, SinkParameter>()
@@ -37,6 +39,24 @@ namespace Sink.Model
                 throw new ArgumentOutOfRangeException("type");
             }
             return parameter.Value;
+        }
+
+        public double WidthSink
+        {
+            get
+            {
+                return _widthSink;
+            }
+            set
+            {
+                if (value < 80 || value > 100)
+                {
+                    throw new ArgumentException(
+                        $"The upper diametr must be in range from 80 to 100"
+                        + $" But was {value}");
+                }
+                this._widthSink = value;
+            }
         }
     }
 }

@@ -18,6 +18,19 @@ namespace Sink
 
         private Dictionary<TextBox, SinkParametersType> TextBoxToParameter;
 
+        private SinkParameters _sinkParameters = new SinkParameters();
+
+        /// <summary>
+        /// Константа для корректного цвета. 
+        /// </summary>
+        private readonly Color _correctColor = Color.White;
+
+        /// <summary>
+        /// Константа для цвета ошибки.
+        /// </summary>
+        private readonly Color _errorColor = Color.LightPink;
+
+        private String _validationError = "";
 
 
         public SinkForm()
@@ -38,7 +51,16 @@ namespace Sink
 
         private void WidthSink_TextChanged(object sender, EventArgs e)
         {
-
+            try
+            {
+                _sinkParameters.WidthSink = Convert.ToDouble(WidthSink.Text);
+                WidthSink.BackColor = _correctColor;
+            }
+            catch (Exception exception)
+            {
+                WidthSink.BackColor = _errorColor;
+                _validationError = _validationError + exception.Message;
+            }
         }
 
         private void BuildingButton_Click(object sender, EventArgs e)
@@ -50,7 +72,7 @@ namespace Sink
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Введите корректные данные", "Ошибка");
+                MessageBox.Show("Введите корректные данные", "Ошибка построения");
             }
         }
 

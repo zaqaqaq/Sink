@@ -183,7 +183,7 @@ namespace Sink
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.splitContainer1);
             this.Name = "SinkForm";
-            this.Text = "Form1";
+            this.Text = "SinkForm";
             this.Load += new System.EventHandler(this.SinkForm_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
