@@ -51,7 +51,6 @@ namespace Sink
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -73,17 +72,15 @@ namespace Sink
             // 
             this.splitContainer1.Panel2.BackgroundImage = global::Sink.Properties.Resources._2;
             this.splitContainer1.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.splitContainer1.Size = new System.Drawing.Size(1067, 554);
-            this.splitContainer1.SplitterDistance = 528;
-            this.splitContainer1.SplitterWidth = 5;
+            this.splitContainer1.Size = new System.Drawing.Size(800, 450);
+            this.splitContainer1.SplitterDistance = 395;
             this.splitContainer1.TabIndex = 0;
             // 
             // BuildingButton
             // 
-            this.BuildingButton.Location = new System.Drawing.Point(197, 428);
-            this.BuildingButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BuildingButton.Location = new System.Drawing.Point(148, 348);
             this.BuildingButton.Name = "BuildingButton";
-            this.BuildingButton.Size = new System.Drawing.Size(152, 64);
+            this.BuildingButton.Size = new System.Drawing.Size(114, 52);
             this.BuildingButton.TabIndex = 12;
             this.BuildingButton.Text = "Построить";
             this.BuildingButton.UseVisualStyleBackColor = true;
@@ -91,117 +88,100 @@ namespace Sink
             // 
             // RadTapSink
             // 
-            this.RadTapSink.Location = new System.Drawing.Point(296, 182);
-            this.RadTapSink.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RadTapSink.Location = new System.Drawing.Point(222, 148);
             this.RadTapSink.Name = "RadTapSink";
-            this.RadTapSink.Size = new System.Drawing.Size(132, 22);
+            this.RadTapSink.Size = new System.Drawing.Size(100, 20);
             this.RadTapSink.TabIndex = 11;
-            this.RadTapSink.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RadTapSink_KeyPress);
             // 
             // RadSink
             // 
-            this.RadSink.Location = new System.Drawing.Point(296, 140);
-            this.RadSink.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RadSink.Location = new System.Drawing.Point(222, 114);
             this.RadSink.Name = "RadSink";
-            this.RadSink.Size = new System.Drawing.Size(132, 22);
+            this.RadSink.Size = new System.Drawing.Size(100, 20);
             this.RadSink.TabIndex = 10;
-            this.RadSink.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RadSink_KeyPress);
             // 
             // HeightSink
             // 
-            this.HeightSink.Location = new System.Drawing.Point(296, 100);
-            this.HeightSink.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.HeightSink.Location = new System.Drawing.Point(222, 81);
             this.HeightSink.Name = "HeightSink";
-            this.HeightSink.Size = new System.Drawing.Size(132, 22);
+            this.HeightSink.Size = new System.Drawing.Size(100, 20);
             this.HeightSink.TabIndex = 9;
-            this.HeightSink.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.HeightSink_KeyPress);
             // 
             // LengthSink
             // 
-            this.LengthSink.Location = new System.Drawing.Point(296, 63);
-            this.LengthSink.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.LengthSink.Location = new System.Drawing.Point(222, 51);
             this.LengthSink.Name = "LengthSink";
-            this.LengthSink.Size = new System.Drawing.Size(132, 22);
+            this.LengthSink.Size = new System.Drawing.Size(100, 20);
             this.LengthSink.TabIndex = 8;
-            this.LengthSink.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.LengthSink_KeyPress);
             // 
             // WidthSink
             // 
-            this.WidthSink.Location = new System.Drawing.Point(296, 25);
-            this.WidthSink.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.WidthSink.Location = new System.Drawing.Point(222, 20);
             this.WidthSink.Name = "WidthSink";
-            this.WidthSink.Size = new System.Drawing.Size(132, 22);
+            this.WidthSink.Size = new System.Drawing.Size(100, 20);
             this.WidthSink.TabIndex = 7;
             this.WidthSink.TextChanged += new System.EventHandler(this.WidthSink_TextChanged);
-            this.WidthSink.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.WidthSink_KeyPress);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(29, 240);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(22, 195);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(288, 17);
+            this.label6.Size = new System.Drawing.Size(225, 13);
             this.label6.TabIndex = 6;
             this.label6.Text = "Примечание: все значения вводятся в мм!";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 28);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(22, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 17);
+            this.label1.Size = new System.Drawing.Size(116, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Ширина раковины W:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 66);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(22, 54);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(137, 17);
+            this.label2.Size = new System.Drawing.Size(107, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Длина раковины D:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(29, 105);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(22, 85);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(149, 17);
+            this.label3.Size = new System.Drawing.Size(115, 13);
             this.label3.TabIndex = 3;
             this.label3.Text = "Глубина раковины H:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(29, 145);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(22, 118);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(220, 17);
+            this.label4.Size = new System.Drawing.Size(172, 13);
             this.label4.TabIndex = 4;
             this.label4.Text = "Диаметр сливного отверстия R:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(29, 187);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(22, 152);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(228, 17);
+            this.label5.Size = new System.Drawing.Size(176, 13);
             this.label5.TabIndex = 5;
             this.label5.Text = "Диаметр отверстия под кран R1:";
             // 
             // SinkForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.splitContainer1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "SinkForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.SinkForm_Load);

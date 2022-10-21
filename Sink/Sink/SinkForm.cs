@@ -24,60 +24,34 @@ namespace Sink
         {
             InitializeComponent();
             Parameters = new Model.SinkParameters();
+            TextBoxToParameter = new Dictionary<TextBox, SinkParametersType>()
+            {
+                { WidthSink, SinkParametersType.WidthSink },
+                { LengthSink, SinkParametersType.LengthSink },
+                { HeightSink, SinkParametersType.HeightSink },
+                { RadSink, SinkParametersType.RadSink },
+                { RadTapSink, SinkParametersType.RadTapSink },
+
+            };
         }
 
-
-
-
-
-        private void WidthSink_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (Char.IsDigit(e.KeyChar) == true) return;
-            if (e.KeyChar == Convert.ToChar(Keys.Back)) return;
-            e.Handled = true;
-            
-        }
-
-        private void LengthSink_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (Char.IsDigit(e.KeyChar) == true) return;
-            if (e.KeyChar == Convert.ToChar(Keys.Back)) return;
-            e.Handled = true;
-            
-        }
-
-        private void HeightSink_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (Char.IsDigit(e.KeyChar) == true) return;
-            if (e.KeyChar == Convert.ToChar(Keys.Back)) return;
-            e.Handled = true;
-            
-        }
-
-        private void RadSink_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (Char.IsDigit(e.KeyChar) == true) return;
-            if (e.KeyChar == Convert.ToChar(Keys.Back)) return;
-            e.Handled = true;
-            
-        }
-
-        private void RadTapSink_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (Char.IsDigit(e.KeyChar) == true) return;
-            if (e.KeyChar == Convert.ToChar(Keys.Back)) return;
-            e.Handled = true;
-            
-        }
 
         private void WidthSink_TextChanged(object sender, EventArgs e)
         {
-         
+
         }
 
         private void BuildingButton_Click(object sender, EventArgs e)
         {
-          
+            try
+            {
+                int num = int.Parse(WidthSink.Text, System.Globalization.NumberStyles.Number);
+                WidthSink.Text = num.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Введите корректные данные", "Ошибка");
+            }
         }
 
         private void SinkForm_Load(object sender, EventArgs e)
@@ -85,6 +59,6 @@ namespace Sink
 
         }
     }
-    }
-    
 }
+    
+
