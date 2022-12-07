@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sink", "Sink\Sink.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sink.Model", "Sink.Model\Sink.Model.csproj", "{794E35FC-1A4D-4DFB-9C98-B085474890BD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sink.Wrapper", "Sink.Wrapper\Sink.Wrapper.csproj", "{4C0C1212-B5F2-422E-BD76-1B58A07624EC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{794E35FC-1A4D-4DFB-9C98-B085474890BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{794E35FC-1A4D-4DFB-9C98-B085474890BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{794E35FC-1A4D-4DFB-9C98-B085474890BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C0C1212-B5F2-422E-BD76-1B58A07624EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C0C1212-B5F2-422E-BD76-1B58A07624EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C0C1212-B5F2-422E-BD76-1B58A07624EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C0C1212-B5F2-422E-BD76-1B58A07624EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

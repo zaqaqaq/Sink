@@ -8,79 +8,143 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Sink.Model;
+using Sink.Wrapper;
 
 namespace Sink
 {
+    /// <summary>
+    /// Класс для взаимодействия с формой.
+    /// </summary>
     public partial class SinkForm : Form
     {
-
-        private SinkParameters Parameters;
-
-        private Dictionary<TextBox, SinkParametersType> TextBoxToParameter;
-
-        private SinkParameters _sinkParameters = new SinkParameters();
+        /// <summary>
+        /// Экземпляр класса ChangeableParametrs
+        /// </summary>
+        private ChangeParameters _changeableParametrs = new ChangeParameters();
 
         /// <summary>
-        /// Константа для корректного цвета. 
-        /// </summary>
-        private readonly Color _correctColor = Color.White;
+        /// Переменная белого цвета
+        /// </summary>  
+        private Color _colorWhite = Color.White;
 
         /// <summary>
-        /// Константа для цвета ошибки.
+        /// Переменная розового цвета
+        /// </summary>  
+        private Color _colorLightPink = Color.LightPink;
+
+        /// <summary>
+        /// Словарь, cвязывающий параметр раковины
+        /// и соотвествующий ему textbox
         /// </summary>
-        private readonly Color _errorColor = Color.LightPink;
-
-        private String _validationError = "";
-
+        private Dictionary<TextBox, Action<double>> _valueTextBox
+            = new Dictionary<TextBox, Action<double>>();
 
         public SinkForm()
         {
             InitializeComponent();
-            Parameters = new Model.SinkParameters();
-            TextBoxToParameter = new Dictionary<TextBox, SinkParametersType>()
-            {
-                { WidthSink, SinkParametersType.WidthSink },
-                { LengthSink, SinkParametersType.LengthSink },
-                { HeightSink, SinkParametersType.HeightSink },
-                { RadSink, SinkParametersType.RadSink },
-                { RadTapSink, SinkParametersType.RadTapSink },
 
-            };
+            _valueTextBox = new Dictionary<TextBox, Action<double>>();
+            _valueTextBox.Add(widthSink, (widthSink)
+                => _changeableParametrs.WidthSink = widthSink);
+            _valueTextBox.Add(lengthSink, (lengthSink)
+                => _changeableParametrs.LengthSink = lengthSink);
+            _valueTextBox.Add(heightSink, (heightSink)
+                => _changeableParametrs.HeightSink = heightSink);
+            _valueTextBox.Add(radSink, (radSink)
+                => _changeableParametrs.RadSink = radSink);
+            _valueTextBox.Add(radTapSink, (radTapSink)
+                => _changeableParametrs.RadTapSink = radTapSink);
         }
 
-
-        private void WidthSink_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                _sinkParameters.WidthSink = Convert.ToDouble(WidthSink.Text);
-                WidthSink.BackColor = _correctColor;
-            }
-            catch (Exception exception)
-            {
-                WidthSink.BackColor = _errorColor;
-                _validationError = _validationError + exception.Message;
-            }
-        }
-
+        /// <summary>
+        /// Обработчик кнопки построения.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BuildingButton_Click(object sender, EventArgs e)
         {
-            try
+            if (widthSink.Text == string.Empty ||
+                 lengthSink.Text == string.Empty ||
+                 heightSink.Text == string.Empty ||
+                 radSink.Text == string.Empty ||
+                 radTapSink.Text == string.Empty ||
+                 /*TextBoxLengthOfHoles.Text == string.Empty ||*/
+                 _changeableParametrs.Parameters.Count > 0)
             {
-                int num = int.Parse(WidthSink.Text, System.Globalization.NumberStyles.Number);
-                WidthSink.Text = num.ToString();
+                MessageBox.Show("Модель не может быть построена!", "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Значения должны быть в диапазоне от 450 мм до 630 мм", "Ошибка построения");
+                var builder = new Builder();
+                builder.BuildSink();
             }
         }
 
-        private void SinkForm_Load(object sender, EventArgs e)
+        /// <summary>
+        /// Валидация для текстбоксов.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TextBoxValidator_TextChanged(object sender, EventArgs e)
         {
+            TextBox textBox = (TextBox)sender;
+            textBox.Focus();
+            if (textBox.Text == string.Empty || textBox.Text == ",")
+            {
+                textBox.Text = string.Empty;
+                return;
+            }
+            try
+            {
+                _valueTextBox[textBox](double.Parse(textBox.Text));
+                textBox.BackColor = _colorWhite;
+                if (textBox == lengthSink)
+                {
+                    TextBoxValidator_TextChanged(widthSink, e);
+                    TextBoxValidator_TextChanged(heightSink, e);
+                    lengthSink.Focus();
+                }
+            }
+            catch
+            {
+                textBox.BackColor = _colorLightPink;
+            }
+        }
 
+        /// <summary>
+        /// Проверка, чтобы textbox содержал только одну запятую и цифры.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CheckForCommasAndNumbers_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsControl(e.KeyChar))
+                && !(char.IsDigit(e.KeyChar))
+                && !((e.KeyChar == ',')
+                     && (((TextBox)sender).Text.IndexOf(",") == -1)
+                    ))
+            {
+                e.Handled = true;
+            }
+        }
+
+        /// <summary>
+        /// Проверка, чтобы textbox содержал только цифры.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void IntegerCheck_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsControl(e.KeyChar))
+                && !(char.IsDigit(e.KeyChar))
+                && !((e.KeyChar == ',')
+                && (((TextBox)sender).Text.IndexOf(",") == 1)
+            ))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
-    
-

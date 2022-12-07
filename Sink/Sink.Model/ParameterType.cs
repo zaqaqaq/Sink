@@ -9,30 +9,30 @@ namespace Sink.Model
     /// <summary>
     /// Перечисление параметров кружки.
     /// </summary>
-    public enum SinkParametersType
+    public enum ParameterType
     {
         /// <summary>
-        /// Диаметер горла кружки.
+        /// Ширина раковины.
         /// </summary>
         WidthSink,
 
         /// <summary>
-        /// Высота кружки.
+        /// Длина раковины.
         /// </summary>
         LengthSink,
 
         /// <summary>
-        /// Толщина стенок кружки.
+        /// Глубина раковины.
         /// </summary>
         HeightSink,
 
         /// <summary>
-        /// Длина ручки кружки.
+        /// Диаметр сливного отверстия.
         /// </summary>
         RadSink,
 
         /// <summary>
-        /// Диаметер внутренней части ручки.
+        /// Диаметер отверстия под кран.
         /// </summary>
         RadTapSink
     }

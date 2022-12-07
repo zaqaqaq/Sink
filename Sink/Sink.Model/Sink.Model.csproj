@@ -41,12 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChangeParameters.cs" />
+    <Compile Include="CheckParameter.cs" />
     <Compile Include="KompasConnector.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SinkBuilder.cs" />
-    <Compile Include="SinkParameter.cs" />
-    <Compile Include="SinkParameters.cs" />
-    <Compile Include="SinkParametersType.cs" />
+    <Compile Include="ParameterType.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
