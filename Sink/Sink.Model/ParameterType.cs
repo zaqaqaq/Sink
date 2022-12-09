@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Sink.Model
+﻿namespace Sink.Model
 {
     /// <summary>
     /// Перечисление параметров кружки.
@@ -32,7 +26,7 @@ namespace Sink.Model
         RadSink,
 
         /// <summary>
-        /// Диаметер отверстия под кран.
+        /// Диаметр отверстия под кран.
         /// </summary>
         RadTapSink
     }

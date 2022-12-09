@@ -20,7 +20,7 @@ namespace Sink
         /// <summary>
         /// Экземпляр класса ChangeableParametrs
         /// </summary>
-        private ChangeParameters _changeableParametrs = new ChangeParameters();
+        private ChangeParameters _changeableParameters = new ChangeParameters();
 
         /// <summary>
         /// Переменная белого цвета
@@ -45,15 +45,15 @@ namespace Sink
 
             _valueTextBox = new Dictionary<TextBox, Action<double>>();
             _valueTextBox.Add(widthSink, (widthSink)
-                => _changeableParametrs.WidthSink = widthSink);
+                => _changeableParameters.WidthSink = widthSink);
             _valueTextBox.Add(lengthSink, (lengthSink)
-                => _changeableParametrs.LengthSink = lengthSink);
+                => _changeableParameters.LengthSink = lengthSink);
             _valueTextBox.Add(heightSink, (heightSink)
-                => _changeableParametrs.HeightSink = heightSink);
+                => _changeableParameters.HeightSink = heightSink);
             _valueTextBox.Add(radSink, (radSink)
-                => _changeableParametrs.RadSink = radSink);
+                => _changeableParameters.RadSink = radSink);
             _valueTextBox.Add(radTapSink, (radTapSink)
-                => _changeableParametrs.RadTapSink = radTapSink);
+                => _changeableParameters.RadTapSink = radTapSink);
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Sink
                  radSink.Text == string.Empty ||
                  radTapSink.Text == string.Empty ||
                  /*TextBoxLengthOfHoles.Text == string.Empty ||*/
-                 _changeableParametrs.Parameters.Count > 0)
+                 _changeableParameters.Parameters.Count > 0)
             {
                 MessageBox.Show("Модель не может быть построена!", "Error",
                     MessageBoxButtons.OK,
@@ -77,8 +77,8 @@ namespace Sink
             }
             else
             {
-                var builder = new Builder();
-                builder.BuildSink();
+                var builder = new SinkBuilder();
+                builder.BuildSink(_changeableParameters);
             }
         }
 
@@ -91,7 +91,7 @@ namespace Sink
         {
             TextBox textBox = (TextBox)sender;
             textBox.Focus();
-            if (textBox.Text == string.Empty || textBox.Text == ",")
+            if (textBox.Text == string.Empty || textBox.Text == ".")
             {
                 textBox.Text = string.Empty;
                 return;

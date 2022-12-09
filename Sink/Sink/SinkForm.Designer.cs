@@ -175,7 +175,7 @@ namespace Sink
             // 
             // lengthSink
             // 
-            this.lengthSink.Location = new System.Drawing.Point(23, 96);
+            this.lengthSink.Location = new System.Drawing.Point(23, 42);
             this.lengthSink.Name = "lengthSink";
             this.lengthSink.Size = new System.Drawing.Size(100, 20);
             this.lengthSink.TabIndex = 8;
@@ -184,7 +184,7 @@ namespace Sink
             // 
             // widthSink
             // 
-            this.widthSink.Location = new System.Drawing.Point(23, 40);
+            this.widthSink.Location = new System.Drawing.Point(23, 89);
             this.widthSink.Name = "widthSink";
             this.widthSink.Size = new System.Drawing.Size(100, 20);
             this.widthSink.TabIndex = 7;
