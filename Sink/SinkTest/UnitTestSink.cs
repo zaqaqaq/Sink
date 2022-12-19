@@ -8,19 +8,20 @@ namespace SinkTest
     {
         private ChangeParameters _changeParameters;
 
-  /*      [TestCase(Description = "Позитивный тест геттера WidthSink")]
-        public void Test_WidthSink_Get_CorrectValue()
+        [TestCase(Description = "Позитивный тест WidthSink")]
+        public void Test_WidthSink_CorrectValue()
         {
             _changeParameters = new ChangeParameters();
             var expected = 450;
+            _changeParameters.LengthSink = 450;
             _changeParameters.WidthSink = expected;
             var actual = _changeParameters.WidthSink;
             Assert.AreEqual(expected, actual, "Значение должно входить в " +
                                               "диапазон от 450 до 630");
 
-        }*/
-/*
-        [TestCase(450, Description = "Позитивный тест сеттера WidthSink")]
+        }
+
+  /*      [TestCase(450, Description = "Позитивный тест сеттера WidthSink")]
         public void Test_WidthSink_Set_CorrectValue(double value)
         {
             _changeParameters = new ChangeParameters();
@@ -42,16 +43,16 @@ namespace SinkTest
             "диапазон от 450 до 630");
         }
 
-       /* [TestCase(450, Description = "Негативный тест сеттера WidthSink")]
-        public void Test_WidthSink_Set_UnCorrectValueAddiction(double wrongWidthSink)
+        [TestCase(Description = "Негативный тест сеттера WidthSink")]
+        public void Test_WidthSink_Set_UnCorrectValueAddiction()
         {
+
             _changeParameters = new ChangeParameters();
-            _changeParameters.WidthSink = 450;
-            Assert.Throws<Exception>(() =>
-            {
-                _changeParameters.WidthSink = wrongWidthSink;
-            }, "Длина раковина должна быть равна ширине раковины");/// длина равна ширине 1 к 1 450
-        }*/
+            var actualWidthSink = Assert.Throws<ArgumentOutOfRangeException>(() =>
+            _changeParameters.WidthSink = 430);
+            Console.WriteLine(actualWidthSink.Message);
+            Assert.That(actualWidthSink.GetType(), Is.EqualTo(typeof(ArgumentOutOfRangeException)));
+        }
 
         [TestCase(Description = "Позитивный тест геттера LengthSink")]
         public void Test_LengthSink_Get_CorrectValue()
@@ -109,16 +110,16 @@ namespace SinkTest
                 "Значение должно входить в диапазон от 60 до 120"); ///1k3
         }
 
-       /* [TestCase(150, Description = "Негативный тест сеттера HeightSink")]
-        public void Test_HeightSink_Set_UnCorrectValueAddiction(double wrongHeightSink)
+        [TestCase( Description = "Негативный тест сеттера HeightSink")]
+        public void Test_HeightSink_Set_UnCorrectValueAddiction()
         {
             _changeParameters = new ChangeParameters();
-            _changeParameters.HeightSink = 450;
-            Assert.Throws<Exception>(() =>
-            {
-                _changeParameters.HeightSink = wrongHeightSink;
-            }, "Высота должна быть в 3 раза меньше длины раковины");/// 1k3 
-        }*/
+            var actualHeightSink = Assert.Throws<ArgumentOutOfRangeException>(() =>
+            _changeParameters.HeightSink = 555);
+            Console.WriteLine(actualHeightSink.Message);
+            Assert.That(actualHeightSink.GetType(), Is.EqualTo(typeof(ArgumentOutOfRangeException)));
+        }
+
 
         [TestCase(149, Description = "Негативный тест сеттера HeightSink")]
         [TestCase(216, Description = "Негативный тест сеттера HeightSink")]
