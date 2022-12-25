@@ -21,15 +21,7 @@ namespace SinkTest
 
         }
 
-  /*      [TestCase(450, Description = "Позитивный тест сеттера WidthSink")]
-        public void Test_WidthSink_Set_CorrectValue(double value)
-        {
-            _changeParameters = new ChangeParameters();
-            _changeParameters.WidthSink = 450;
-            Assert.AreEqual(value, _changeParameters.WidthSink,
-                "Значение должно входить в диапазон от 450 до 630");
-        }*/
-
+       
         [TestCase(430, Description = "Негативный тест сеттера WidthSink")]
         [TestCase(650, Description = "Негативный тест сеттера WidthSink")]
 

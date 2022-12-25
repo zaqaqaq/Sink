@@ -30,6 +30,8 @@ namespace Sink
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.RadTapLabel = new System.Windows.Forms.Label();
             this.RadLabel = new System.Windows.Forms.Label();
             this.HeightLabel = new System.Windows.Forms.Label();
@@ -60,6 +62,8 @@ namespace Sink
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.label8);
+            this.splitContainer1.Panel1.Controls.Add(this.label7);
             this.splitContainer1.Panel1.Controls.Add(this.RadTapLabel);
             this.splitContainer1.Panel1.Controls.Add(this.RadLabel);
             this.splitContainer1.Panel1.Controls.Add(this.HeightLabel);
@@ -86,15 +90,33 @@ namespace Sink
             this.splitContainer1.SplitterDistance = 394;
             this.splitContainer1.TabIndex = 0;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(22, 317);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(188, 13);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "Ширина зависит от глубины как 1:3";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(22, 302);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(210, 13);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "Ширина зависит от длины раковины 1:1";
+            // 
             // RadTapLabel
             // 
             this.RadTapLabel.AutoSize = true;
             this.RadTapLabel.Location = new System.Drawing.Point(200, 254);
             this.RadTapLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.RadTapLabel.Name = "RadTapLabel";
-            this.RadTapLabel.Size = new System.Drawing.Size(120, 13);
+            this.RadTapLabel.Size = new System.Drawing.Size(139, 13);
             this.RadTapLabel.TabIndex = 21;
-            this.RadTapLabel.Text = "мин - 20 мм, макс - 30";
+            this.RadTapLabel.Text = "мин - 20 мм, макс - 30 мм";
             // 
             // RadLabel
             // 
@@ -102,9 +124,9 @@ namespace Sink
             this.RadLabel.Location = new System.Drawing.Point(200, 201);
             this.RadLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.RadLabel.Name = "RadLabel";
-            this.RadLabel.Size = new System.Drawing.Size(120, 13);
+            this.RadLabel.Size = new System.Drawing.Size(139, 13);
             this.RadLabel.TabIndex = 20;
-            this.RadLabel.Text = "мин - 50 мм, макс - 70";
+            this.RadLabel.Text = "мин - 50 мм, макс - 70 мм";
             // 
             // HeightLabel
             // 
@@ -112,9 +134,9 @@ namespace Sink
             this.HeightLabel.Location = new System.Drawing.Point(200, 150);
             this.HeightLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.HeightLabel.Name = "HeightLabel";
-            this.HeightLabel.Size = new System.Drawing.Size(132, 13);
+            this.HeightLabel.Size = new System.Drawing.Size(151, 13);
             this.HeightLabel.TabIndex = 19;
-            this.HeightLabel.Text = "мин - 150 мм, макс - 210";
+            this.HeightLabel.Text = "мин - 150 мм, макс - 210 мм";
             // 
             // LengthLabel
             // 
@@ -122,9 +144,9 @@ namespace Sink
             this.LengthLabel.Location = new System.Drawing.Point(200, 96);
             this.LengthLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LengthLabel.Name = "LengthLabel";
-            this.LengthLabel.Size = new System.Drawing.Size(132, 13);
+            this.LengthLabel.Size = new System.Drawing.Size(151, 13);
             this.LengthLabel.TabIndex = 18;
-            this.LengthLabel.Text = "мин - 450 мм, макс - 630";
+            this.LengthLabel.Text = "мин - 450 мм, макс - 630 мм";
             // 
             // WidthLabel
             // 
@@ -138,7 +160,7 @@ namespace Sink
             // 
             // BuildingButton
             // 
-            this.BuildingButton.Location = new System.Drawing.Point(142, 343);
+            this.BuildingButton.Location = new System.Drawing.Point(143, 362);
             this.BuildingButton.Name = "BuildingButton";
             this.BuildingButton.Size = new System.Drawing.Size(114, 52);
             this.BuildingButton.TabIndex = 12;
@@ -196,9 +218,9 @@ namespace Sink
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(22, 286);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(225, 13);
+            this.label6.Size = new System.Drawing.Size(76, 13);
             this.label6.TabIndex = 6;
-            this.label6.Text = "Примечание: все значения вводятся в мм!";
+            this.label6.Text = "Примечание: ";
             // 
             // label1
             // 
@@ -281,6 +303,8 @@ namespace Sink
         private System.Windows.Forms.Label RadLabel;
         private System.Windows.Forms.Label HeightLabel;
         private System.Windows.Forms.Label LengthLabel;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
     }
 }
 

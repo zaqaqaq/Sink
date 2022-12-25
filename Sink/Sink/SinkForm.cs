@@ -137,14 +137,7 @@ namespace Sink
         /// <param name="e"></param>
         private void IntegerCheck_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsControl(e.KeyChar))
-                && !(char.IsDigit(e.KeyChar))
-                && !((e.KeyChar == ',')
-                && (((TextBox)sender).Text.IndexOf(",") == 1)
-            ))
-            {
-                e.Handled = true;
-            }
+
         }
     }
 }
