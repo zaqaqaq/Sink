@@ -89,7 +89,7 @@ namespace SinkTest
             _changeParameters.HeightSink = expected;
             var actual = _changeParameters.HeightSink;
             Assert.AreEqual(expected, actual, "Значение должно входить в " +
-                                              "диапазон от 60 до 120"); /// 1k3 150=450
+                                              "диапазон от 150 до 210"); /// 1k3 150=450
         }
 
         [TestCase(150, Description = "Позитивный тест сеттера HeightSink")]
@@ -99,7 +99,7 @@ namespace SinkTest
             _changeParameters.LengthSink = 450;
             _changeParameters.HeightSink = 150;
             Assert.AreEqual(value, _changeParameters.HeightSink,
-                "Значение должно входить в диапазон от 60 до 120"); ///1k3
+                "Значение должно входить в диапазон от 150 до 210"); ///1k3
         }
 
         [TestCase( Description = "Негативный тест сеттера HeightSink")]
@@ -122,7 +122,7 @@ namespace SinkTest
             {
                 _changeParameters.HeightSink = wrongHeightSink;
             }, "Должно возникать исключение, если значение не входит в " +
-                   "диапазон от 60 до 120");
+                   "диапазон от 150 до 210");
         }
 
         [TestCase(Description = "Позитивный тест геттера RadSink")]
@@ -189,7 +189,7 @@ namespace SinkTest
             {
                 _changeParameters.RadTapSink = wrongRadTapSink;
             }, "Должно возникать исключение, если значение не входит в " +
-                   "диапазон от 90 до 100");
+                   "диапазон от 20 до 30");
         }
     }
 }
