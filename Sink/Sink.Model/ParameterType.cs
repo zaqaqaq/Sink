@@ -28,6 +28,16 @@
         /// <summary>
         /// Диаметр отверстия под кран.
         /// </summary>
-        RadTapSink
+        RadTapSink,
+
+        /// <summary>
+        /// Координата X отверстия под фильтр.
+        /// </summary>
+        FilterSinkX,
+
+        /// <summary>
+        /// Координата Y отверстия под фильтр.
+        /// </summary>
+        FilterSinkY
     }
 }

@@ -54,6 +54,10 @@ namespace Sink
                 => _changeableParameters.RadSink = radSink);
             _valueTextBox.Add(radTapSink, (radTapSink)
                 => _changeableParameters.RadTapSink = radTapSink);
+            _valueTextBox.Add(filterSinkX, (filterSinkX)
+                => _changeableParameters.FilterSinkX = filterSinkX);
+            _valueTextBox.Add(filterSinkY, (filterSinkY)
+                => _changeableParameters.FilterSinkY = filterSinkY);
         }
 
         /// <summary>
@@ -64,12 +68,14 @@ namespace Sink
         private void BuildingButton_Click(object sender, EventArgs e)
         {
             if (widthSink.Text == string.Empty ||
-                 lengthSink.Text == string.Empty ||
-                 heightSink.Text == string.Empty ||
-                 radSink.Text == string.Empty ||
-                 radTapSink.Text == string.Empty ||
-                 /*TextBoxLengthOfHoles.Text == string.Empty ||*/
-                 _changeableParameters.Parameters.Count > 0)
+                lengthSink.Text == string.Empty ||
+                heightSink.Text == string.Empty ||
+                radSink.Text == string.Empty ||
+                radTapSink.Text == string.Empty ||
+                filterSinkX.Text == string.Empty ||
+                filterSinkY.Text == string.Empty ||
+                /*TextBoxLengthOfHoles.Text == string.Empty ||*/
+                _changeableParameters.Parameters.Count > 0)
             {
                 MessageBox.Show("Модель не может быть построена!", "Error",
                     MessageBoxButtons.OK,

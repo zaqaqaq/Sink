@@ -34,6 +34,16 @@ namespace Sink.Model
         private double _radTapSink;
 
         /// <summary>
+        /// Координата X отверстия под фильтр.
+        /// </summary>
+        private double _filterSinkX;
+
+        /// <summary>
+        /// Координата Y отверстия под фильтр.
+        /// </summary>
+        private double _filterSinkY;
+
+        /// <summary>
         /// Словарь перечисления параметров и ошибки
         /// </summary>
         public Dictionary<ParameterType, string> Parameters =
@@ -164,6 +174,57 @@ namespace Sink.Model
                     (value, min, max,
                     ParameterType.RadTapSink, Parameters);
                 _radTapSink = value;
+            }
+        }
+
+        /// <summary>
+        /// Возвращает и устанавливает значение координаты X отверстия под фильтр.
+        /// </summary>
+        public double FilterSinkX
+        {
+            get
+            {
+                return _filterSinkX;
+            }
+
+            set
+            {
+                double min = _radTapSink / 2 + 15;
+                double max = _widthSink / 2 - 25;
+                if (value >= 0)
+                {
+                    _parameterCheck.RangeCheck
+                    (value, min, max,
+                        ParameterType.FilterSinkX, Parameters);
+                }
+                else
+                {
+                    _parameterCheck.RangeCheck
+                    (value, -max, -min,
+                        ParameterType.FilterSinkX, Parameters);
+                }
+                _filterSinkX = value;
+            }
+        }
+
+        /// <summary>
+        /// Возвращает и устанавливает значение координаты Y отверстия под фильтр.
+        /// </summary>
+        public double FilterSinkY
+        {
+            get
+            {
+                return _filterSinkY;
+            }
+
+            set
+            {
+                double min = _lengthSink / 2 - 105;
+                double max = _lengthSink / 2 - 25;
+                _parameterCheck.RangeCheck
+                (value, min, max,
+                    ParameterType.FilterSinkY, Parameters);
+                _filterSinkY = value;
             }
         }
     }

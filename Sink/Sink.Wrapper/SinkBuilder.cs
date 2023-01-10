@@ -22,9 +22,11 @@ namespace Sink.Wrapper
             var heightSink = parameters.HeightSink;
             var radSink = parameters.RadSink;
             var radTapSink = parameters.RadTapSink;
+            var filterSinkX = parameters.FilterSinkX;
+            var filterSinkY = parameters.FilterSinkY;
             BuildMainBody(widthSink, lengthSink, heightSink);
             BuildSinkFillets(lengthSink, heightSink);
-            BuildHoles(lengthSink, heightSink, radSink, radTapSink);
+            BuildHoles(lengthSink, heightSink, radSink, radTapSink, filterSinkX, filterSinkY);
         }
 
         /// <summary>
@@ -365,9 +367,11 @@ namespace Sink.Wrapper
         /// <param name="lengthSink">Длина раковины.</param>
         /// <param name="heightSink">Высота раковины.</param>
         /// <param name="radSink">Диаметр отверстия слива.</param>
-        /// <param name="radTapSink">Диаметр отверстия под кран.</param>
+        /// <param name="radTapSink">Диаметр отверстия под кран.</param> 
+        /// <param name="filterSinkX">Координата X отверстия под фильтр.</param>
+        /// <param name="filterSinkY">Координата Y отверстия под фильтр.</param>
         private void BuildHoles(double lengthSink, double heightSink,
-            double radSink, double radTapSink)
+            double radSink, double radTapSink, double filterSinkX, double filterSinkY)
         {
             // Создание отверстия под кран.
 
@@ -380,6 +384,19 @@ namespace Sink.Wrapper
             };
             var sketch =
                 _wrapper.CreateCircle(tapCenter, radTapSink / 2);
+            _wrapper.CutExtrusion(sketch, heightSink);
+
+            // Создание отверстия под фильтр.
+
+            // Центр окружности крана.
+            // 0 элемент - координата по X.
+            // 1 элемент - координата по Y.
+            double[] filterCenter =
+            {
+                filterSinkX, filterSinkY
+            };
+            sketch =
+                _wrapper.CreateCircle(filterCenter, 10);
             _wrapper.CutExtrusion(sketch, heightSink);
 
             // Создание отверстия под слив.
