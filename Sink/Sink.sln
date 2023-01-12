@@ -9,7 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sink.Model", "Sink.Model\Si
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sink.Wrapper", "Sink.Wrapper\Sink.Wrapper.csproj", "{4C0C1212-B5F2-422E-BD76-1B58A07624EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sink.Test", "SinkTest\Sink.Test.csproj", "{99D3DF02-BBBD-432A-9AC8-64488AAD413B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sink.Test", "SinkTest\Sink.Test.csproj", "{99D3DF02-BBBD-432A-9AC8-64488AAD413B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StressTest", "StressTest\StressTest.csproj", "{52C83B35-BC43-4753-976B-F24452E2FF6D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{99D3DF02-BBBD-432A-9AC8-64488AAD413B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99D3DF02-BBBD-432A-9AC8-64488AAD413B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99D3DF02-BBBD-432A-9AC8-64488AAD413B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52C83B35-BC43-4753-976B-F24452E2FF6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52C83B35-BC43-4753-976B-F24452E2FF6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52C83B35-BC43-4753-976B-F24452E2FF6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52C83B35-BC43-4753-976B-F24452E2FF6D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -126,8 +126,8 @@ namespace Sink.Model
                     ParameterType.HeightSink, Parameters);
                 if (LengthSink != value * 3)
                 {
-                  /*  Parameters.Add(ParameterType.HeightSink,
-                        "Выход за диапазон");*/
+                    Parameters.Add(ParameterType.HeightSink,
+                        "Выход за диапазон");
                     throw new Exception();
                   
                 }
