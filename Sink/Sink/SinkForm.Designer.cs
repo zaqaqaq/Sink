@@ -30,6 +30,12 @@ namespace Sink
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.FilterSinkYLabel = new System.Windows.Forms.Label();
+            this.FilterSinkXLabel = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.filterSinkY = new System.Windows.Forms.TextBox();
+            this.filterSinkX = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.RadTapLabel = new System.Windows.Forms.Label();
@@ -49,12 +55,6 @@ namespace Sink
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.filterSinkX = new System.Windows.Forms.TextBox();
-            this.filterSinkY = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.FilterSinkXLabel = new System.Windows.Forms.Label();
-            this.FilterSinkYLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -101,6 +101,61 @@ namespace Sink
             this.splitContainer1.Size = new System.Drawing.Size(800, 450);
             this.splitContainer1.SplitterDistance = 407;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // FilterSinkYLabel
+            // 
+            this.FilterSinkYLabel.AutoSize = true;
+            this.FilterSinkYLabel.Location = new System.Drawing.Point(188, 274);
+            this.FilterSinkYLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.FilterSinkYLabel.Name = "FilterSinkYLabel";
+            this.FilterSinkYLabel.Size = new System.Drawing.Size(209, 13);
+            this.FilterSinkYLabel.TabIndex = 29;
+            this.FilterSinkYLabel.Text = "мин - | D/2-105 | мм, макс - | D/2-25 | мм";
+            // 
+            // FilterSinkXLabel
+            // 
+            this.FilterSinkXLabel.AutoSize = true;
+            this.FilterSinkXLabel.Location = new System.Drawing.Point(188, 235);
+            this.FilterSinkXLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.FilterSinkXLabel.Name = "FilterSinkXLabel";
+            this.FilterSinkXLabel.Size = new System.Drawing.Size(215, 13);
+            this.FilterSinkXLabel.TabIndex = 28;
+            this.FilterSinkXLabel.Text = "мин - | R1/2+15 | мм, макс - | W/2-25 | мм";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(22, 255);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(212, 13);
+            this.label10.TabIndex = 27;
+            this.label10.Text = "Координата Y отверстия под фильтр C2:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(22, 216);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(212, 13);
+            this.label9.TabIndex = 26;
+            this.label9.Text = "Координата X отверстия под фильтр C1:";
+            // 
+            // filterSinkY
+            // 
+            this.filterSinkY.Location = new System.Drawing.Point(23, 271);
+            this.filterSinkY.Name = "filterSinkY";
+            this.filterSinkY.Size = new System.Drawing.Size(100, 20);
+            this.filterSinkY.TabIndex = 25;
+            this.filterSinkY.TextChanged += new System.EventHandler(this.TextBoxValidator_TextChanged);
+            this.filterSinkY.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CheckForCommasAndNumbers_KeyPress);
+            // 
+            // filterSinkX
+            // 
+            this.filterSinkX.Location = new System.Drawing.Point(23, 232);
+            this.filterSinkX.Name = "filterSinkX";
+            this.filterSinkX.Size = new System.Drawing.Size(100, 20);
+            this.filterSinkX.TabIndex = 24;
+            this.filterSinkX.TextChanged += new System.EventHandler(this.TextBoxValidator_TextChanged);
             // 
             // label8
             // 
@@ -278,62 +333,6 @@ namespace Sink
             this.label5.Size = new System.Drawing.Size(176, 13);
             this.label5.TabIndex = 5;
             this.label5.Text = "Диаметр отверстия под кран R1:";
-            // 
-            // filterSinkX
-            // 
-            this.filterSinkX.Location = new System.Drawing.Point(23, 232);
-            this.filterSinkX.Name = "filterSinkX";
-            this.filterSinkX.Size = new System.Drawing.Size(100, 20);
-            this.filterSinkX.TabIndex = 24;
-            this.filterSinkX.TextChanged += new System.EventHandler(this.TextBoxValidator_TextChanged);
-            this.filterSinkX.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CheckForCommasAndNumbers_KeyPress);
-            // 
-            // filterSinkY
-            // 
-            this.filterSinkY.Location = new System.Drawing.Point(23, 271);
-            this.filterSinkY.Name = "filterSinkY";
-            this.filterSinkY.Size = new System.Drawing.Size(100, 20);
-            this.filterSinkY.TabIndex = 25;
-            this.filterSinkY.TextChanged += new System.EventHandler(this.TextBoxValidator_TextChanged);
-            this.filterSinkY.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CheckForCommasAndNumbers_KeyPress);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(22, 216);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(212, 13);
-            this.label9.TabIndex = 26;
-            this.label9.Text = "Координата X отверстия под фильтр C1:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(22, 255);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(212, 13);
-            this.label10.TabIndex = 27;
-            this.label10.Text = "Координата Y отверстия под фильтр C2:";
-            // 
-            // FilterSinkXLabel
-            // 
-            this.FilterSinkXLabel.AutoSize = true;
-            this.FilterSinkXLabel.Location = new System.Drawing.Point(188, 235);
-            this.FilterSinkXLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.FilterSinkXLabel.Name = "FilterSinkXLabel";
-            this.FilterSinkXLabel.Size = new System.Drawing.Size(215, 13);
-            this.FilterSinkXLabel.TabIndex = 28;
-            this.FilterSinkXLabel.Text = "мин - | R1/2+15 | мм, макс - | W/2-25 | мм";
-            // 
-            // FilterSinkYLabel
-            // 
-            this.FilterSinkYLabel.AutoSize = true;
-            this.FilterSinkYLabel.Location = new System.Drawing.Point(188, 274);
-            this.FilterSinkYLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.FilterSinkYLabel.Name = "FilterSinkYLabel";
-            this.FilterSinkYLabel.Size = new System.Drawing.Size(209, 13);
-            this.FilterSinkYLabel.TabIndex = 29;
-            this.FilterSinkYLabel.Text = "мин - | D/2-105 | мм, макс - | D/2-25 | мм";
             // 
             // SinkForm
             // 

@@ -135,15 +135,5 @@ namespace Sink
                 e.Handled = true;
             }
         }
-
-        /// <summary>
-        /// Проверка, чтобы textbox содержал только цифры.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void IntegerCheck_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
     }
 }
