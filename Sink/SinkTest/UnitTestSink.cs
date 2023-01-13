@@ -6,6 +6,7 @@ namespace SinkTest
 {
     public class Tests
     {
+        //TODO: убрать
         private ChangeParameters _changeParameters;
 
         [TestCase(Description = "Позитивный тест WidthSink")]

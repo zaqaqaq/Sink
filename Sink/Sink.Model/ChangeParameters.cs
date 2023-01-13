@@ -124,6 +124,7 @@ namespace Sink.Model
                 _parameterCheck.RangeCheck
                     (value, min, max,
                     ParameterType.HeightSink, Parameters);
+                //TODO: 3 - const
                 if (LengthSink != value * 3)
                 {
                     Parameters.Add(ParameterType.HeightSink,
@@ -189,6 +190,7 @@ namespace Sink.Model
 
             set
             {
+                //TODO: const
                 double min = _radTapSink / 2 + 15;
                 double max = _widthSink / 2 - 25;
                 if (value >= 0)
@@ -219,6 +221,7 @@ namespace Sink.Model
 
             set
             {
+                //TODO: const
                 double min = _lengthSink / 2 - 105;
                 double max = _lengthSink / 2 - 25;
                 _parameterCheck.RangeCheck
