@@ -2,7 +2,9 @@
 
 namespace Sink.Wrapper
 {
-    //TODO: RSDN
+    /// <summary>
+    /// Класс построения раковины.
+    /// </summary>
     public class SinkBuilder
     {
         /// <summary>
@@ -13,7 +15,7 @@ namespace Sink.Wrapper
         /// <summary>
         /// Метод для создания раковины.
         /// </summary>
-        public void BuildSink(ChangeParameters parameters)
+        public void BuildSink(SinkParameter parameters)
         {
             _wrapper.StartKompas();
             _wrapper.CreateDocument();

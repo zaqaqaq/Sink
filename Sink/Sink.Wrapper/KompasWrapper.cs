@@ -5,7 +5,9 @@ using System.Runtime.InteropServices;
 
 namespace Sink.Wrapper
 {
-    //TODO: RSDN
+    /// <summary>
+    /// Класс запуска Компас 3D и его библиотек.
+    /// </summary>
     public class KompasWrapper
     {
         /// <summary>

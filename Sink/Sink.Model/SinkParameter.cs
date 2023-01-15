@@ -6,7 +6,7 @@ namespace Sink.Model
     /// <summary>
     /// Класс параметров.
     /// </summary>
-    public class ChangeParameters
+    public class SinkParameter
     {
         /// <summary>
         /// Параметр ширины раковины. 
@@ -42,6 +42,31 @@ namespace Sink.Model
         /// Координата Y отверстия под фильтр.
         /// </summary>
         private double _filterSinkY;
+
+        // <summary>
+        /// Зависимый параметр высоты.
+        /// </summary>
+        private double _constHeight = 3;
+
+        /// <summary>
+        /// Параметр для рассчета отверстия.
+        /// </summary>
+        private double _halfConst = 2;
+
+        /// <summary>
+        /// Минимальное значение координаты X отверстия.
+        /// </summary>
+        private double _minFilterX = 15;
+
+        /// <summary>
+        /// Максимальное значение координаты X отверстия.
+        /// </summary>
+        private double _maxFilter = 25;
+
+        /// <summary>
+        /// Минимальное значение координаты Y отверстия.
+        /// </summary>
+        private double _minFilterY = 105;
 
         /// <summary>
         /// Словарь перечисления параметров и ошибки
@@ -125,7 +150,7 @@ namespace Sink.Model
                     (value, min, max,
                     ParameterType.HeightSink, Parameters);
                 //TODO: 3 - const
-                if (LengthSink != value * 3)
+                if (LengthSink != value * _constHeight)
                 {
                     Parameters.Add(ParameterType.HeightSink,
                         "Выход за диапазон");
@@ -191,8 +216,8 @@ namespace Sink.Model
             set
             {
                 //TODO: const
-                double min = _radTapSink / 2 + 15;
-                double max = _widthSink / 2 - 25;
+                double min = _radTapSink / _halfConst + _minFilterX;
+                double max = _widthSink / _halfConst - _maxFilter;
                 if (value >= 0)
                 {
                     _parameterCheck.RangeCheck
@@ -222,8 +247,8 @@ namespace Sink.Model
             set
             {
                 //TODO: const
-                double min = _lengthSink / 2 - 105;
-                double max = _lengthSink / 2 - 25;
+                double min = _lengthSink / _halfConst - _minFilterY;
+                double max = _lengthSink / _halfConst - _maxFilter;
                 _parameterCheck.RangeCheck
                 (value, min, max,
                     ParameterType.FilterSinkY, Parameters);

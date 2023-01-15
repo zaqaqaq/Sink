@@ -25,7 +25,7 @@ namespace StressTest
             var stopWatch = new Stopwatch();
             stopWatch.Start();
             var sinkBuilder = new SinkBuilder();
-            var changeParameters = new ChangeParameters();
+            var changeParameters = new SinkParameter();
             double widthSink = 450;
             double lengthSink = 450;
             double hightSink = 150;

@@ -96,7 +96,7 @@ namespace Sink
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.BackgroundImage = global::Sink.Properties.Resources._2;
+            this.splitContainer1.Panel2.BackgroundImage = global::Sink.Properties.Resources.финал_3;
             this.splitContainer1.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.splitContainer1.Size = new System.Drawing.Size(800, 450);
             this.splitContainer1.SplitterDistance = 407;
@@ -127,18 +127,18 @@ namespace Sink
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(22, 255);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(212, 13);
+            this.label10.Size = new System.Drawing.Size(206, 13);
             this.label10.TabIndex = 27;
-            this.label10.Text = "Координата Y отверстия под фильтр C2:";
+            this.label10.Text = "Координата Y отверстия под фильтр C:";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(22, 216);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(212, 13);
+            this.label9.Size = new System.Drawing.Size(206, 13);
             this.label9.TabIndex = 26;
-            this.label9.Text = "Координата X отверстия под фильтр C1:";
+            this.label9.Text = "Координата X отверстия под фильтр C:";
             // 
             // filterSinkY
             // 

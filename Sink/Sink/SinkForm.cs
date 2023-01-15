@@ -20,7 +20,7 @@ namespace Sink
         /// <summary>
         /// Экземпляр класса ChangeableParametrs
         /// </summary>
-        private ChangeParameters _changeableParameters = new ChangeParameters();
+        private SinkParameter _changeableParameters = new SinkParameter();
 
         /// <summary>
         /// Переменная белого цвета
@@ -74,7 +74,6 @@ namespace Sink
                 radTapSink.Text == string.Empty ||
                 filterSinkX.Text == string.Empty ||
                 filterSinkY.Text == string.Empty ||
-                /*TextBoxLengthOfHoles.Text == string.Empty ||*/
                 _changeableParameters.Parameters.Count > 0)
             {
                 MessageBox.Show("Модель не может быть построена!", "Error",
