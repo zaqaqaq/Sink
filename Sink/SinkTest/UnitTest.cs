@@ -1,13 +1,12 @@
-using NUnit.Framework;
+п»їusing NUnit.Framework;
 using System;
 using Sink.Model;
 
-namespace SinkTest
-{
-    public class SinkParametersTest
+namespace Sink.Test
+{   
+    public class UnitTest
     {
-
-        [TestCase(Description = "Позитивный тест WidthSink")]
+        [TestCase(Description = "РџРѕР·РёС‚РёРІРЅС‹Р№ С‚РµСЃС‚ WidthSink")]
         public void Test_WidthSink_CorrectValue()
         {
             SinkParameter sinkParameters = new SinkParameter();
@@ -15,14 +14,14 @@ namespace SinkTest
             sinkParameters.LengthSink = 450;
             sinkParameters.WidthSink = expected;
             var actual = sinkParameters.WidthSink;
-            Assert.AreEqual(expected, actual, "Значение должно входить в " +
-                                              "диапазон от 450 до 630");
+            Assert.AreEqual(expected, actual, "Р—РЅР°С‡РµРЅРёРµ РґРѕР»Р¶РЅРѕ РІС…РѕРґРёС‚СЊ РІ " +
+                                              "РґРёР°РїР°Р·РѕРЅ РѕС‚ 450 РґРѕ 630");
 
         }
 
 
-        [TestCase(430, Description = "Негативный тест сеттера WidthSink")]
-        [TestCase(650, Description = "Негативный тест сеттера WidthSink")]
+        [TestCase(430, Description = "РќРµРіР°С‚РёРІРЅС‹Р№ С‚РµСЃС‚ СЃРµС‚С‚РµСЂР° WidthSink")]
+        [TestCase(650, Description = "РќРµРіР°С‚РёРІРЅС‹Р№ С‚РµСЃС‚ СЃРµС‚С‚РµСЂР° WidthSink")]
 
         public void Test_WidthSink_Set_UnCorrectValue(double wrongWidthSink)
         {
@@ -30,11 +29,11 @@ namespace SinkTest
             Assert.Throws<ArgumentOutOfRangeException>(() =>
             {
                 sinkParameters.WidthSink = wrongWidthSink;
-            }, "Должно возникать исключение, если значение не входит в " +
-            "диапазон от 450 до 630");
+            }, "Р”РѕР»Р¶РЅРѕ РІРѕР·РЅРёРєР°С‚СЊ РёСЃРєР»СЋС‡РµРЅРёРµ, РµСЃР»Рё Р·РЅР°С‡РµРЅРёРµ РЅРµ РІС…РѕРґРёС‚ РІ " +
+            "РґРёР°РїР°Р·РѕРЅ РѕС‚ 450 РґРѕ 630");
         }
 
-        [TestCase(Description = "Негативный тест сеттера WidthSink")]
+        [TestCase(Description = "РќРµРіР°С‚РёРІРЅС‹Р№ С‚РµСЃС‚ СЃРµС‚С‚РµСЂР° WidthSink")]
         public void Test_WidthSink_Set_UnCorrectValueAddiction()
         {
 
@@ -45,41 +44,41 @@ namespace SinkTest
             Assert.That(actualWidthSink.GetType(), Is.EqualTo(typeof(ArgumentOutOfRangeException)));
         }
 
-        [TestCase(Description = "Позитивный тест геттера LengthSink")]
+        [TestCase(Description = "РџРѕР·РёС‚РёРІРЅС‹Р№ С‚РµСЃС‚ РіРµС‚С‚РµСЂР° LengthSink")]
         public void Test_LengthSink_Get_CorrectValue()
         {
             SinkParameter sinkParameters = new SinkParameter();
             var expected = 470;
             sinkParameters.LengthSink = expected;
             var actual = sinkParameters.LengthSink;
-            Assert.AreEqual(expected, actual, "Значение должно входить в " +
-                                              "диапазон от 450 до 630");
+            Assert.AreEqual(expected, actual, "Р—РЅР°С‡РµРЅРёРµ РґРѕР»Р¶РЅРѕ РІС…РѕРґРёС‚СЊ РІ " +
+                                              "РґРёР°РїР°Р·РѕРЅ РѕС‚ 450 РґРѕ 630");
 
         }
 
-        [TestCase(450, Description = "Позитивный тест сеттера LengthSink")]
+        [TestCase(450, Description = "РџРѕР·РёС‚РёРІРЅС‹Р№ С‚РµСЃС‚ СЃРµС‚С‚РµСЂР° LengthSink")]
         public void Test_LengthSink_Set_CorrectValue(double value)
         {
             SinkParameter sinkParameters = new SinkParameter();
             sinkParameters.LengthSink = 450;
             Assert.AreEqual(value, sinkParameters.LengthSink,
-                "Значение должно входить в диапазон от 450 до 630");
+                "Р—РЅР°С‡РµРЅРёРµ РґРѕР»Р¶РЅРѕ РІС…РѕРґРёС‚СЊ РІ РґРёР°РїР°Р·РѕРЅ РѕС‚ 450 РґРѕ 630");
 
         }
 
-        [TestCase(420, Description = "Негативный тест сеттера LengthSink")]
-        [TestCase(670, Description = "Негативный тест сеттера LengthSink")]
+        [TestCase(420, Description = "РќРµРіР°С‚РёРІРЅС‹Р№ С‚РµСЃС‚ СЃРµС‚С‚РµСЂР° LengthSink")]
+        [TestCase(670, Description = "РќРµРіР°С‚РёРІРЅС‹Р№ С‚РµСЃС‚ СЃРµС‚С‚РµСЂР° LengthSink")]
         public void Test_LengthSink_Set_UnCorrectValue(double wrongLengthSink)
         {
             SinkParameter sinkParameters = new SinkParameter();
             Assert.Throws<ArgumentOutOfRangeException>(() =>
             {
                 sinkParameters.LengthSink = wrongLengthSink;
-            }, "Должно возникать исключение, если значение не входит в " +
-                   "диапазон от 450 до 630");
+            }, "Р”РѕР»Р¶РЅРѕ РІРѕР·РЅРёРєР°С‚СЊ РёСЃРєР»СЋС‡РµРЅРёРµ, РµСЃР»Рё Р·РЅР°С‡РµРЅРёРµ РЅРµ РІС…РѕРґРёС‚ РІ " +
+                   "РґРёР°РїР°Р·РѕРЅ РѕС‚ 450 РґРѕ 630");
         }
 
-        [TestCase(Description = "Позитивный тест геттера HeightSink")]
+        [TestCase(Description = "РџРѕР·РёС‚РёРІРЅС‹Р№ С‚РµСЃС‚ РіРµС‚С‚РµСЂР° HeightSink")]
         public void Test_HeightSink_Get_CorrectValue()
         {
             SinkParameter sinkParameters = new SinkParameter();
@@ -87,21 +86,21 @@ namespace SinkTest
             var expected = 150;
             sinkParameters.HeightSink = expected;
             var actual = sinkParameters.HeightSink;
-            Assert.AreEqual(expected, actual, "Значение должно входить в " +
-                                              "диапазон от 150 до 210"); /// 1k3 150=450
+            Assert.AreEqual(expected, actual, "Р—РЅР°С‡РµРЅРёРµ РґРѕР»Р¶РЅРѕ РІС…РѕРґРёС‚СЊ РІ " +
+                                              "РґРёР°РїР°Р·РѕРЅ РѕС‚ 150 РґРѕ 210"); /// 1k3 150=450
         }
 
-        [TestCase(150, Description = "Позитивный тест сеттера HeightSink")]
+        [TestCase(150, Description = "РџРѕР·РёС‚РёРІРЅС‹Р№ С‚РµСЃС‚ СЃРµС‚С‚РµСЂР° HeightSink")]
         public void Test_HeightSink_Set_CorrectValue(double value)
         {
             SinkParameter sinkParameters = new SinkParameter();
             sinkParameters.LengthSink = 450;
             sinkParameters.HeightSink = 150;
             Assert.AreEqual(value, sinkParameters.HeightSink,
-                "Значение должно входить в диапазон от 150 до 210"); ///1k3
+                "Р—РЅР°С‡РµРЅРёРµ РґРѕР»Р¶РЅРѕ РІС…РѕРґРёС‚СЊ РІ РґРёР°РїР°Р·РѕРЅ РѕС‚ 150 РґРѕ 210"); ///1k3
         }
 
-        [TestCase(Description = "Негативный тест сеттера HeightSink")]
+        [TestCase(Description = "РќРµРіР°С‚РёРІРЅС‹Р№ С‚РµСЃС‚ СЃРµС‚С‚РµСЂР° HeightSink")]
         public void Test_HeightSink_Set_UnCorrectValueAddiction()
         {
             SinkParameter sinkParameters = new SinkParameter();
@@ -112,74 +111,74 @@ namespace SinkTest
         }
 
 
-        [TestCase(149, Description = "Негативный тест сеттера HeightSink")]
-        [TestCase(216, Description = "Негативный тест сеттера HeightSink")]
+        [TestCase(149, Description = "РќРµРіР°С‚РёРІРЅС‹Р№ С‚РµСЃС‚ СЃРµС‚С‚РµСЂР° HeightSink")]
+        [TestCase(216, Description = "РќРµРіР°С‚РёРІРЅС‹Р№ С‚РµСЃС‚ СЃРµС‚С‚РµСЂР° HeightSink")]
         public void Test_HeightSink_Set_UnCorrectValue(double wrongHeightSink)
         {
             SinkParameter sinkParameters = new SinkParameter();
             Assert.Throws<ArgumentOutOfRangeException>(() =>
             {
                 sinkParameters.HeightSink = wrongHeightSink;
-            }, "Должно возникать исключение, если значение не входит в " +
-                   "диапазон от 150 до 210");
+            }, "Р”РѕР»Р¶РЅРѕ РІРѕР·РЅРёРєР°С‚СЊ РёСЃРєР»СЋС‡РµРЅРёРµ, РµСЃР»Рё Р·РЅР°С‡РµРЅРёРµ РЅРµ РІС…РѕРґРёС‚ РІ " +
+                   "РґРёР°РїР°Р·РѕРЅ РѕС‚ 150 РґРѕ 210");
         }
 
-        [TestCase(Description = "Позитивный тест геттера RadSink")]
+        [TestCase(Description = "РџРѕР·РёС‚РёРІРЅС‹Р№ С‚РµСЃС‚ РіРµС‚С‚РµСЂР° RadSink")]
         public void Test_RadSink_Get_CorrectValue()
         {
             SinkParameter sinkParameters = new SinkParameter();
             var expected = 55;
             sinkParameters.RadSink = expected;
             var actual = sinkParameters.RadSink;
-            Assert.AreEqual(expected, actual, "Значение должно входить в " +
-                                              "диапазон от 50 до 70");
+            Assert.AreEqual(expected, actual, "Р—РЅР°С‡РµРЅРёРµ РґРѕР»Р¶РЅРѕ РІС…РѕРґРёС‚СЊ РІ " +
+                                              "РґРёР°РїР°Р·РѕРЅ РѕС‚ 50 РґРѕ 70");
 
         }
 
-        [TestCase(65, Description = "Позитивный тест сеттера RadSink")]
+        [TestCase(65, Description = "РџРѕР·РёС‚РёРІРЅС‹Р№ С‚РµСЃС‚ СЃРµС‚С‚РµСЂР° RadSink")]
         public void Test_RadSink_Set_CorrectValue(double value)
         {
             SinkParameter sinkParameters = new SinkParameter();
             sinkParameters.RadSink = 65;
             Assert.AreEqual(value, sinkParameters.RadSink,
-                "Значение должно входить в диапазон от 50 до 70");
+                "Р—РЅР°С‡РµРЅРёРµ РґРѕР»Р¶РЅРѕ РІС…РѕРґРёС‚СЊ РІ РґРёР°РїР°Р·РѕРЅ РѕС‚ 50 РґРѕ 70");
 
         }
 
-        [TestCase(40, Description = "Негативный тест сеттера RadSink")]
-        [TestCase(90, Description = "Негативный тест сеттера RadSink")]
+        [TestCase(40, Description = "РќРµРіР°С‚РёРІРЅС‹Р№ С‚РµСЃС‚ СЃРµС‚С‚РµСЂР° RadSink")]
+        [TestCase(90, Description = "РќРµРіР°С‚РёРІРЅС‹Р№ С‚РµСЃС‚ СЃРµС‚С‚РµСЂР° RadSink")]
         public void Test_RadSink_Set_UnCorrectValue(double wrongRadSink)
         {
             SinkParameter sinkParameters = new SinkParameter();
             Assert.Throws<ArgumentOutOfRangeException>(() =>
             {
                 sinkParameters.RadSink = wrongRadSink;
-            }, "Должно возникать исключение, если значение не входит в " +
-                   "диапазон от 50 до 70");
+            }, "Р”РѕР»Р¶РЅРѕ РІРѕР·РЅРёРєР°С‚СЊ РёСЃРєР»СЋС‡РµРЅРёРµ, РµСЃР»Рё Р·РЅР°С‡РµРЅРёРµ РЅРµ РІС…РѕРґРёС‚ РІ " +
+                   "РґРёР°РїР°Р·РѕРЅ РѕС‚ 50 РґРѕ 70");
         }
 
-        [TestCase(Description = "Позитивный тест геттера RadTapSink")]
+        [TestCase(Description = "РџРѕР·РёС‚РёРІРЅС‹Р№ С‚РµСЃС‚ РіРµС‚С‚РµСЂР° RadTapSink")]
         public void Test_RadTapSink_Get_CorrectValue()
         {
             SinkParameter sinkParameters = new SinkParameter();
             var expected = 22;
             sinkParameters.RadTapSink = expected;
             var actual = sinkParameters.RadTapSink;
-            Assert.AreEqual(expected, actual, "Значение должно входить в " +
-                                              "диапазон от 20 до 30");
+            Assert.AreEqual(expected, actual, "Р—РЅР°С‡РµРЅРёРµ РґРѕР»Р¶РЅРѕ РІС…РѕРґРёС‚СЊ РІ " +
+                                              "РґРёР°РїР°Р·РѕРЅ РѕС‚ 20 РґРѕ 30");
         }
 
-        [TestCase(28, Description = "Позитивный тест сеттера RadTapSink")]
+        [TestCase(28, Description = "РџРѕР·РёС‚РёРІРЅС‹Р№ С‚РµСЃС‚ СЃРµС‚С‚РµСЂР° RadTapSink")]
         public void Test_NumberOfHoles_Set_CorrectValue(double value)
         {
             SinkParameter sinkParameters = new SinkParameter();
             sinkParameters.RadTapSink = 28;
             Assert.AreEqual(value, sinkParameters.RadTapSink,
-                "Значение должно входить в диапазон от 20 до 30");
+                "Р—РЅР°С‡РµРЅРёРµ РґРѕР»Р¶РЅРѕ РІС…РѕРґРёС‚СЊ РІ РґРёР°РїР°Р·РѕРЅ РѕС‚ 20 РґРѕ 30");
         }
 
-        [TestCase(18, Description = "Негативный тест сеттера RadTapSink")]
-        [TestCase(35, Description = "Негативный тест сеттера RadTapSink")]
+        [TestCase(18, Description = "РќРµРіР°С‚РёРІРЅС‹Р№ С‚РµСЃС‚ СЃРµС‚С‚РµСЂР° RadTapSink")]
+        [TestCase(35, Description = "РќРµРіР°С‚РёРІРЅС‹Р№ С‚РµСЃС‚ СЃРµС‚С‚РµСЂР° RadTapSink")]
 
         public void Test_RadTapSink_Set_UnCorrectValue(double wrongRadTapSink)
         {
@@ -187,8 +186,9 @@ namespace SinkTest
             Assert.Throws<ArgumentOutOfRangeException>(() =>
             {
                 sinkParameters.RadTapSink = wrongRadTapSink;
-            }, "Должно возникать исключение, если значение не входит в " +
-                   "диапазон от 20 до 30");
+            }, "Р”РѕР»Р¶РЅРѕ РІРѕР·РЅРёРєР°С‚СЊ РёСЃРєР»СЋС‡РµРЅРёРµ, РµСЃР»Рё Р·РЅР°С‡РµРЅРёРµ РЅРµ РІС…РѕРґРёС‚ РІ " +
+                   "РґРёР°РїР°Р·РѕРЅ РѕС‚ 20 РґРѕ 30");
         }
     }
 }
+
